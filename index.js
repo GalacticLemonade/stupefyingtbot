@@ -11,5 +11,9 @@ client.once(Events.ClientReady, c => {
 	console.log(`Ready! Logged in as ${c.user.tag}`);
 });
 
+client.on('guildMemberAdd', member => {
+	console.log("member joined");
+});
+
 // Log in to Discord with your client's token
 client.login(token);
