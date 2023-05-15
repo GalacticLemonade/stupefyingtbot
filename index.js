@@ -5,7 +5,7 @@ const { token } = require('./config.json');
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-client.on(Events.GuildMemberAdd, guildMemberAdd => {
+client.on(Events.GuildMemberAdd, guildMember => {
 	console.log("Guild Member joined");
 });
 
