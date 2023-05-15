@@ -14,7 +14,7 @@ const client = new Client({
 
 client.on('guildMemberAdd', member => {
 	console.log(`${member.user.tag} has joined the server!`);
-	client.channels.cache.get('1107507218892476418').send('Hello here!')
+	client.channels.cache.get('1107507218892476418').send('Welcome to the server, @<'+member.user.id+'>')
 });
 
 client.on('error', console.error);
