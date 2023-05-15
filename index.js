@@ -2,19 +2,19 @@
 const { Client, Events, GatewayIntentBits, IntentsBitField } = require('discord.js');
 const { token } = require('./config.json');
 
-const WelcomeChannelID = 1107507218892476418; // 
-
 // Create a new client instance
 const client = new Client({
 	intents: [
-	GatewayIntentBits.Guilds,
-	IntentsBitField.Flags.GuildMembers,
-] 
+		GatewayIntentBits.Guilds,
+		IntentsBitField.Flags.GuildMembers
+	] 
 });
 
+const WelcomeChannelID = "1107507218892476418";
+
 client.on('guildMemberAdd', member => {
-	console.log(`${member.user.tag} has joined the server!`);
-	client.channels.cache.get('1107507218892476418').send('Welcome to the server, @<'+member.user.id+'>')
+	console.log(`${member.user.tag} has joined the server`);
+	client.channels.cache.get('1107507218892476418').send(`Welcome to the server, ${member}!`);
 });
 
 client.on('error', console.error);
