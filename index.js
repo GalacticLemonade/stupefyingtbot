@@ -1,9 +1,14 @@
 // Require the necessary discord.js classes
-const { Client, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Events, GatewayIntentBits, IntentsBitField } = require('discord.js');
 const { token } = require('./config.json');
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+	intents: [
+	GatewayIntentBits.Guilds,
+	IntentsBitField.Flags.GuildMembers,
+] 
+});
 
 client.on('guildMemberAdd', member => {
 	console.log(`${member.user.tag} has joined the server!`);
