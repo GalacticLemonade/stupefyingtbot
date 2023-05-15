@@ -5,9 +5,11 @@ const { token } = require('./config.json');
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-client.on(Events.GuildMemberAdd, guildMember => {
-	console.log("Guild Member joined");
-});
+client.on('guildMemberAdd', member => {
+	console.log(`${member.user.tag} has joined the server!`);
+  });
+
+  client.on('error', console.error);
 
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
