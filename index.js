@@ -14,7 +14,7 @@ const WelcomeChannelID = "1107507218892476418";
 
 client.on('guildMemberAdd', member => {
 	console.log(`${member.user.tag} has joined the server`);
-	client.channels.cache.get('1107507218892476418').send(`Welcome to the server, ${member}!`);
+	client.channels.cache.get(WelcomeChannelID).send(`Welcome to the server, ${member}!`);
 });
 
 client.on('error', console.error);
