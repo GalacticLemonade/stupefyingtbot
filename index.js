@@ -10,7 +10,7 @@ const client = new Client({
 	] 
 });
 
-const WelcomeChannelID = "1107507218892476418";
+const WelcomeChannelID = "1067639935441588256";
 
 client.on('guildMemberAdd', member => {
 	console.log(`${member.user.tag} has joined the server`);
