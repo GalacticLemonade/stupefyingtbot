@@ -11,9 +11,11 @@ const client = new Client({
 });
 
 const WelcomeChannelID = "1067639935441588256";
+const StupefyerRoleID = "1067822870249623643";
 
 client.on('guildMemberAdd', member => {
 	console.log(`${member.user.tag} has joined the server`);
+	member.roles.add(StupefyerRoleID);
 	client.channels.cache.get(WelcomeChannelID).send(`Welcome to the server, ${member}!`);
 });
 
